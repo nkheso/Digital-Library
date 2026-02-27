@@ -1,5 +1,6 @@
 // src/components/pages/GamesPage.jsx
 import { useState } from 'react';
+import consoleImage from '@/components/assets/console.jpeg'; // Adjust the path as needed
 
 export const GamesPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -9,7 +10,7 @@ export const GamesPage = () => {
       <div className="max-w-7xl mx-auto px-8 py-12">
         {/* Header - Centered */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-blue-500 bg-clip-text text-transparent">
             Games
           </h1>
           <p className="text-xl text-gray-600">
@@ -42,13 +43,24 @@ export const GamesPage = () => {
           </div>
         </div>
 
-        {/* Empty State Message */}
-        <div className="text-center py-16">
-          <div className="text-6xl mb-6 text-gray-300">🎮</div>
-          <h2 className="text-2xl font-semibold text-gray-700 mb-3">No Games Available Yet</h2>
-          <p className="text-gray-500 max-w-md mx-auto">
-            We're working on bringing you amazing games. Please check back later!
-          </p>
+        {/* Image and Empty State */}
+        <div className="flex flex-col items-center justify-center py-8">
+          {/* Console Image */}
+          <div className="mb-8 w-64 h-64 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
+            <img 
+              src={consoleImage} 
+              alt="Gaming Console" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Empty State Message */}
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold text-gray-700 mb-3">No Games Available Yet</h2>
+            <p className="text-gray-500 max-w-md mx-auto">
+              We're working on bringing you amazing games. Please check back later!
+            </p>
+          </div>
         </div>
       </div>
     </div>
